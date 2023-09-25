@@ -1,0 +1,17 @@
+<% errors = model.errors %>
+<% if errors.any? %>
+  <div class="alert alert-danger d-flex justify-content-between" data-turbo-temporary>
+    <div>
+      <div class="lead pb-2">
+        <%= t('errors', count: errors.count) %>:
+      </div>
+
+      <ul class="mb-0">
+        <% errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+    <button type="button" class="btn-close btn-outline-secondary" data-bs-dismiss="alert" aria-label="close"></button>
+  </div>
+<% end %>

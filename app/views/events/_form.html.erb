@@ -1,0 +1,29 @@
+<%= form_for(@event) do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: @event} %>
+
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :datetime %>
+    <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
+  </div>
+
+  <div class="form-group pb-3">
+    <%= f.label :description %>
+    <%= f.text_area :description, class: 'form-control' %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit t('views.button.save'), class: 'btn btn-primary' %>
+    <%= link_to t('views.button.back'), :back, class: 'btn btn-secondary' %>
+  </div>
+<% end %>
+

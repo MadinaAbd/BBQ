@@ -1,0 +1,11 @@
+<div class="pt-1">
+  <%- if controller_name != 'sessions' %>
+    <%= link_to t('views.button.sing_in'), new_session_path(resource_name), class: 'btn btn-outline-dark btn-sm' %><br />
+  <% end %>
+</div>
+
+<div class="pt-1">
+  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+    <%= link_to t('views.button.register'), new_registration_path(resource_name), class: 'btn btn-outline-dark btn-sm' %><br />
+  <% end %>
+</div>

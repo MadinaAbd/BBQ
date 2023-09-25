@@ -1,0 +1,45 @@
+<h2><%= t('views.title.edit_password') %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="mb-3">
+    <%= f.label :email, for: 'exampleFormControlInput1', class: 'form-label' %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", type: 'email', class: 'form-control', id: 'exampleFormControlInput', placeholder: 'name@example.com' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: 'form-label' %> <i> <%= t('text.not_change_the_password')%></i><br />
+    <%= f.password_field :password, autocomplete: 'new-password', class: 'form-control', id: 'exampleFormControlTextarea1', rows:'3' %>
+    <% if @minimum_password_length %>
+      <em id="passwordHelpBlock" class="form-text"><%= @minimum_password_length%> <%= t('text.password_length')%></em>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation, class: 'form-label pt-2' %><br />
+    <%= f.password_field :password_confirmation, autocomplete: 'new-password', class: 'form-control' %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :current_password, class: 'form-label' %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> <%= t('text.password_length')%>)</em>
+    <% end %><br />
+    <%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+  </div>
+
+  <div class="pt-2 pb-2">
+    <p><%= f.submit t('views.button.edit'), class: 'btn btn-secondary btn-sm' %>
+    <%= link_to t('views.button.back'), edit_user_path(@user), class: 'btn btn-secondary btn-sm' %>
+    </p>
+  </div>
+<% end %>
+
+<div class="pt-2 pb-5">
+  <%= button_to t('views.button.delete_profile'),
+    registration_path(resource_name),
+    method: :delete,
+    form: { data: { turbo_confirm: t('flash.delete_confirm') }},
+    class: 'btn btn-outline-secondary btn-sm' %>
+</div>

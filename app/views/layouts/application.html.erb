@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BBQ</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <h1><%= link_to t('app.name'), root_path, class: 'navbar-brand' %></h1>
+            <div class="d-flex">
+              <% if user_signed_in? %>
+                <div class="p-2">
+                  <%= button_to t('views.button.profile'), current_user, method: :get, class: 'btn btn-outline-dark btn-sm' %>
+                </div>
+                <div class="p-2">
+                  <%= button_to t('views.button.log_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark btn-sm' %>
+                </div>
+              <% else %>
+                <div class="p-2">
+                  <%= button_to t('views.button.sing_in'), new_user_session_path,class: 'btn btn-outline-dark btn-sm' %>
+                </div>
+                <div class="p-2">
+                  <%= button_to t('views.button.register'), new_user_registration_path,method: :get, class: 'btn btn-outline-dark btn-sm' %>
+                </div>
+              <% end %>
+            </div>
+        </div>
+      </nav>
+
+      <% if notice.present? %>
+        <div class="alert alert-success" role="alert">
+          <%= notice %>
+        </div>
+      <% end %>
+
+      <div class="row g-2 g-lg-3">
+        <div class="col">
+          <div class="p-3">
+            <%= yield %>
+          </div>
+        </div>
+      </div>
+        <footer class="p-3">
+          <p>&copy; <%= t'app.company' %> 2023</p>
+        </footer>
+    </div>
+  </body>
+</html>
+
+
+

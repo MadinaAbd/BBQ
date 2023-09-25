@@ -1,0 +1,10 @@
+<h1><%= t('views.title.events') %></h1>
+
+<div class="buffer-both">
+  <%= link_to t('views.title.new_event'), new_event_path, class: 'btn btn-success' %>
+</div>
+
+<div class="row buffer-bottom">
+  <%= render partial: 'events/event', collection: @events %>
+</div>
+

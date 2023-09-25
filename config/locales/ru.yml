@@ -1,0 +1,141 @@
+ru:
+  activerecord:
+    models:
+      user: 'Пользователь'
+      event: 'Событие'
+
+    attributes:
+      user:
+        email: 'Email'
+        name: 'Имя'
+        avatar: 'Аватарка'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+      event:
+        title: 'Название'
+        address: 'Место проведения'
+        datetime: 'Дата и время'
+        description: 'Описание'
+      photo:
+        photo: 'Фотография'
+      comment:
+        user_name: 'Ваше имя'
+        body: 'Комментарий'
+
+  controllers:
+    events:
+      created: 'Вы создали новое мероприятие'
+      updated: 'Вы обновили мероприятие'
+      destroyed: 'Вы удалили мероприятие :('
+    users:
+      updated: 'Вы обновили свой профиль'
+    comments:
+      destroyed: 'Комментарий удален'
+      created: 'Ваш комментарий добавлен'
+      error: 'Ошибка с коментарием'
+    subscription:
+      created: 'Вы подписаны на это событие'
+      destroyed: 'Участник отписан'
+      error: 'Подписка/отписка не сработала'
+    photos:
+      error: 'Что-то не так с фоткой'
+      created: 'Вы добавили фотографию к событию'
+      destroyed: 'Вы удалили фотку'
+
+  app:
+    name: 'Шашлыки'
+    company: 'Хороший программист'
+
+  comments:
+    comment:
+      destroy_confirm: 'Вы уверены, что хотите удалить этот коментарий?'
+
+  subscriotions:
+    subscriotion:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+
+  devise:
+      registrations:
+        new: 'Регистрация'
+  sessions:
+    login: 'Войти'
+
+  errors:
+    one: '%{count} ошибка'
+    few: '%{count} ошибки'
+    many: '%{count} ошибок'
+
+  views:
+    button:
+      delete: 'Удалить'
+      edit: 'Изменить'
+      delete_profile: 'Удалить учетную запись'
+      back: 'Назад'
+      send: 'Отправить'
+      register: 'Зарегистрироваться'
+      sing_in: 'Войти'
+      save: 'Сохранить'
+      profile: 'Профиль'
+      log_out: 'Выйти'
+      subscriotion: 'Подписаться'
+      download: 'Загрузить'
+      follow: 'Присоединиться к мероприятию'
+      change_password: 'Сменить пароль'
+
+    flash:
+      delete_confirm: 'Вы уверены?'
+
+    title:
+      event_edit: 'Редактирование события'
+      events: 'События'
+      new_event: 'Новое событие'
+      user_edit: 'Редактирование профиля'
+      user_edit_path: 'Редактировать профиль'
+      organized: 'Организовал'
+      no_events: 'Пользователь не организовал ни одного события'
+      new_event: 'Создать событие'
+      added: 'Добавил'
+      edit_password: 'Редактировать пароль'
+
+    event:
+      invite: 'Приглашает'
+      follow: 'Пойдут'
+
+  text:
+    password: 'Пароль'
+    password_length: 'знаков минимум'
+    not_change_the_password: '(оставьте поле пустым, если вы не хотите менять пароль)'
+    name: 'Имя'
+    user_name: 'Имя пользователя'
+    email: 'Email'
+    photo: 'Фото'
+    password_confirmation: 'Подтверждение пароля'
+
+  mailer:
+    new_subscription: 'Новая подписка на '
+    new_comment: 'Новый комментарий @ '
+    new_comment: 'Новое фото в '
+
+  event_mailer:
+    comment:
+      title: 'Новый комментарий'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    subscription:
+      title: 'Новая подписка'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'
+    photo:
+      title: 'Новое фото'
+      name: 'Имя'
+      email: 'Email'
+      author: 'Автор'
+      event: 'Событие'
+      datetime: 'Состоится'
+      owner: 'Организатор'

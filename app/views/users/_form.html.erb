@@ -1,0 +1,24 @@
+<%= form_for @user, html: {multipart: true} do |f| %>
+  <%= render partial: 'partials/form_errors', locals: {model: @user} %>
+
+  <div class="mb-3">
+    <%= f.label t('text.name')%>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :avatar %>
+    <p><%= image_tag(@user.avatar.thumb.url) if @user.avatar? %></p>
+    <%= f.file_field :avatar %>
+  </div>
+
+  <div class="pt-3 pb-2">
+    <%= f.submit t('views.button.save'), class: 'btn btn-secondary btn-sm' %>
+    <%= link_to t('views.button.back'), :back, class: 'btn btn-secondary btn-sm' %>
+  </div>
+<% end %>

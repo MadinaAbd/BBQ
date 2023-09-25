@@ -1,0 +1,10 @@
+<%= t '.title' %>
+----
+
+<%= t '.name' %>: <%= @name %>
+<%= t '.email' %>: <%= @email %>
+---------------------
+
+<%= t '.event' %>: <%= @event.title %>
+<%= t 'place' %>: <%= l @event.datetime %>
+<%= t '.organizer' %>: <%= @event.user.name %>
